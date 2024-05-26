@@ -18,6 +18,14 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: hanlinkhaing/ticketing-ticket
+      context: ticket
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
     - image: hanlinkhaing/ticketing-client
       context: client
       docker:
