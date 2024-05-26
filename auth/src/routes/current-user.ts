@@ -1,9 +1,10 @@
 import express from "express";
+import { currentUser } from "../middlewares/current-user";
 
 const router = express.Router();
 
-router.get("/currentuser", (req, res) => {
-  res.send("Hi there!");
+router.get("/currentuser", currentUser, (req, res) => {
+  res.send({ currentUser: req.currentUser || null });
 });
 
 export { router as currentUserRouter };
